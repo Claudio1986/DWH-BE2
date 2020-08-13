@@ -1,0 +1,60 @@
+USE [BancaEmpresas]
+GO
+
+/****** Object:  Table [dbo].[bg_cartera]    Script Date: 06/11/2018 13:49:43 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+DROP TABLE [dbo].[bg_cartera]
+CREATE TABLE [dbo].[bg_cartera](
+	[FECHA] [date] NOT NULL,
+	[rut_cli] [numeric](12, 0) NOT NULL,
+	[DV_CLIENTE] [nvarchar](1) NULL,
+	[NOMBRE_CLIENTE] [nvarchar](50) NULL,
+	[NRO_OPERACION] [float] NOT NULL,
+	[NRO_DOCUMENTO] [int] NULL,
+	[TIPO_OPERACION] [int] NULL,
+	[TIPO_PROD_FISA] [int] NULL,
+	[MONEDA] [int] NULL,
+	[TASA] [float] NULL,
+	[FECHA_OTORGAMIENTO] [date] NULL,
+	[FECHA_VENCIMIENTO] [date] NULL,
+	[FECHA_SUSPENSION] [date] NULL,
+	[NRO_CUOTAS] [int] NULL,
+	[NRO_CUOTAS_PAGADAS] [int] NULL,
+	[NRO_CUOTAS_MOROSAS] [int] NULL,
+	[NRO_DIAS_MOROSAS] [int] NULL,
+	[CAPITAL_INICIAL_ML] [float] NULL,
+	[CAPITAL_VIGENTE_ML] [float] NULL,
+	[CAPITAL_VENCIDO_ML] [float] NULL,
+	[INTERES_VIGENTE_ML] [int] NULL,
+	[INTERES_VENCIDO_ML] [int] NULL,
+	[REAJUSTE_VIGENTE] [int] NULL,
+	[REAJUSTE_VENCIDO] [int] NULL,
+	[INTERES_SUSPENDIDO] [int] NULL,
+	[REAJUSTE_SUSPENDIDO] [int] NULL,
+	[CAPITAL_INICIAL_MO] [float] NULL,
+	[CAPITAL_VIGENTE_MO] [float] NULL,
+	[CAPITAL_VENCIDO_MO] [float] NULL,
+	[INTERES_VIGENTE_MO] [int] NULL,
+	[INTERES_VENCIDO_MO] [int] NULL,
+ CONSTRAINT [PK_bg_cartera] PRIMARY KEY CLUSTERED 
+(
+	[FECHA] ASC,
+	[rut_cli] ASC,
+	[NRO_OPERACION] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[bg_cartera]  WITH NOCHECK ADD  CONSTRAINT [FK_bg_cartera_gc_clientes1] FOREIGN KEY([rut_cli])
+REFERENCES [dbo].[gc_clientes] ([rut_cli])
+GO
+
+ALTER TABLE [dbo].[bg_cartera] CHECK CONSTRAINT [FK_bg_cartera_gc_clientes1]
+GO
+
+
