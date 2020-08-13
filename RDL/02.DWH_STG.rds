@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="DWH_STG">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=ASBUCDESA;Initial Catalog=DWH_STG</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>1a81b1ec-dde1-46ff-a0f9-8209f21ffc93</DataSourceID>
+</RptDataSource>

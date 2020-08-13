@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="BE">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=asbucdesa;Initial Catalog=BancaEmpresas</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>a85383a7-03f0-4419-abb0-fd85d19846c5</DataSourceID>
+</RptDataSource>
